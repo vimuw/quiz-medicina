@@ -475,26 +475,26 @@ export function App() {
 
       {/* QUIZ & RESULTS SCREEN */}
       {(view === 'quiz' || view === 'results') && currentQuizId && (
-        <div className="w-full max-w-4xl px-4 py-8 mt-12 flex-1 flex flex-col relative animate-fade-in">
+        <div className="w-full max-w-3xl px-4 py-6 mt-24 flex-1 flex flex-col relative animate-fade-in">
 
           {/* Results Summary */}
           {view === 'results' && (
-            <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(0,0,0,0.3)] p-5 md:p-8 text-center mb-6 md:mb-8 border border-gray-400 dark:border-gray-700">
-              <div className="inline-block p-3 md:p-4 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-4 md:mb-6">
-                <svg className="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(0,0,0,0.3)] p-5 md:p-6 text-center mb-6 border border-gray-400 dark:border-gray-700">
+              <div className="inline-block p-3 md:p-4 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-4 md:mb-5">
+                <svg className="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               </div>
-              <h2 className="text-xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-2 md:mb-3">Risultato Quiz</h2>
-              <div className="text-3xl md:text-5xl font-black text-primary-600 dark:text-primary-400 my-4 md:my-6 tracking-tight">{Math.round((score / total) * 100)}%</div>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-6 md:mb-8">Risultato: {score} su {total}</p>
-              <div className="flex justify-center gap-4 md:gap-6 flex-wrap">
-                <button onClick={() => handleStartQuiz(currentQuizId!)} className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2.5 px-5 md:py-3 md:px-8 rounded-xl text-sm md:text-lg transition-colors shadow-md">Nuovo Tentativo</button>
-                <button onClick={() => handleReturnHome()} className="bg-white dark:bg-gray-700 border-2 border-gray-400 dark:border-gray-500 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 font-semibold py-2.5 px-5 md:py-3 md:px-8 rounded-xl text-sm md:text-lg transition-colors">Torna alla Home</button>
+              <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 dark:text-white mb-2 md:mb-3">Risultato Quiz</h2>
+              <div className="text-3xl md:text-4xl font-black text-primary-600 dark:text-primary-400 my-4 tracking-tight">{Math.round((score / total) * 100)}%</div>
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-6">Risultato: {score} su {total}</p>
+              <div className="flex justify-center gap-4 flex-wrap">
+                <button onClick={() => handleStartQuiz(currentQuizId!)} className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-6 rounded-xl text-sm md:text-base transition-colors shadow-md">Nuovo Tentativo</button>
+                <button onClick={() => handleReturnHome()} className="bg-white dark:bg-gray-700 border-2 border-gray-400 dark:border-gray-500 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 font-semibold py-2 px-6 rounded-xl text-sm md:text-base transition-colors">Torna alla Home</button>
               </div>
             </div>
           )}
 
           {/* Questions List */}
-          <div className="space-y-6 md:space-y-8 pt-4 md:pt-6">
+          <div className="space-y-5 pt-2">
             {questionIndices.map((qIndex, displayIndex) => {
               const qData = ALL_QUIZZES[currentQuizId!][qIndex];
               const key = getStorageKey(currentQuizId!, qIndex);
@@ -515,9 +515,9 @@ export function App() {
               }
 
               return (
-                <div key={qIndex} id={`q-${qIndex}`} className={`bg-white dark:bg-gray-800 rounded-2xl md:rounded-3xl shadow-lg border ${borderColor} p-5 md:p-8 relative transition-all duration-300`}>
-                  <div className="flex justify-between items-start mb-3 md:mb-4 gap-4 md:gap-6">
-                    <h3 className="text-lg md:text-2xl font-medium text-gray-900 dark:text-gray-100 leading-relaxed pt-1">
+                <div key={qIndex} id={`q-${qIndex}`} className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg border ${borderColor} p-4 md:p-6 relative transition-all duration-300`}>
+                  <div className="flex justify-between items-start mb-3 gap-4">
+                    <h3 className="text-base md:text-xl font-medium text-gray-900 dark:text-gray-100 leading-relaxed pt-0.5">
                       <span className="text-primary-600 dark:text-primary-400 font-bold mr-2">{displayIndex + 1}.</span> {qData.question}
                     </h3>
                     <button
@@ -531,7 +531,7 @@ export function App() {
                           : 'text-gray-400 hover:text-yellow-600'
                         }`}
                     >
-                      <span className={`text-2xl md:text-3xl transition-transform duration-300 inline-block ${isFlagged ? 'text-yellow-500 scale-110' : ''}`}>
+                      <span className={`text-2xl transition-transform duration-300 inline-block ${isFlagged ? 'text-yellow-500 scale-110' : ''}`}>
                         {isFlagged ? '⚑' : '⚐'}
                       </span>
                     </button>
@@ -539,31 +539,31 @@ export function App() {
 
                   {/* Options or Input */}
                   {qData.type === 'text_input' ? (
-                    <div className="space-y-4 md:space-y-5 p-1 md:p-2">
+                    <div className="space-y-3 p-1">
                       {view === 'quiz' ? (
                         <input
                           type="text"
-                          className="w-full p-3 md:p-4 rounded-xl md:rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white outline-none focus:border-primary-500 transition-colors text-base md:text-lg"
+                          className="w-full p-3 rounded-xl border-2 border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white outline-none focus:border-primary-500 transition-colors text-sm md:text-base"
                           placeholder="La tua risposta..."
                           value={attempt || ''}
                           onChange={(e) => handleInput(qIndex, e.target.value)}
                         />
                       ) : (
-                        <div className="p-3 md:p-6 bg-gray-50 dark:bg-gray-900 rounded-xl md:rounded-2xl border border-gray-300 dark:border-gray-600">
-                          <p className="text-sm md:text-lg text-gray-500 mb-2 font-semibold">La tua risposta:</p>
-                          <div className={`font-bold text-lg md:text-2xl ${attempt?.toLowerCase().replace(/\s/g, '') === qData.answer.toLowerCase().replace(/\s/g, '') ? 'text-green-600' : 'text-red-600'}`}>
+                        <div className="p-3 md:p-5 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-300 dark:border-gray-600">
+                          <p className="text-xs md:text-sm text-gray-500 mb-1 font-semibold">La tua risposta:</p>
+                          <div className={`font-bold text-base md:text-xl ${attempt?.toLowerCase().replace(/\s/g, '') === qData.answer.toLowerCase().replace(/\s/g, '') ? 'text-green-600' : 'text-red-600'}`}>
                             {attempt || 'Nessuna risposta'}
                           </div>
-                          <div className="mt-3 md:mt-4 text-sm md:text-lg text-gray-500 font-semibold border-t border-gray-200 dark:border-gray-700 pt-3 md:pt-4">
+                          <div className="mt-2 md:mt-3 text-xs md:text-sm text-gray-500 font-semibold border-t border-gray-200 dark:border-gray-700 pt-2 md:pt-3">
                             Risposta corretta: <span className="font-bold text-green-600 dark:text-green-400">{qData.answer}</span>
                           </div>
                         </div>
                       )}
                     </div>
                   ) : (
-                    <div className="space-y-3 md:space-y-5">
+                    <div className="space-y-2 md:space-y-3">
                       {currentOptions.map((opt) => {
-                        let btnClass = "w-full text-left p-3 md:p-5 rounded-xl md:rounded-2xl transition-all duration-200 flex items-center border-2 text-base md:text-lg ";
+                        let btnClass = "w-full text-left p-3 md:p-4 rounded-xl transition-all duration-200 flex items-center border-2 text-sm md:text-base ";
                         let dotClass = "w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-primary-600 transition-opacity ";
 
                         if (view === 'quiz') {
