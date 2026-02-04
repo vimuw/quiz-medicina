@@ -384,14 +384,22 @@ export function App() {
                             amber: 'text-amber-600 bg-amber-100 dark:bg-amber-900/30 border-amber-500',
                             blue: 'text-blue-600 bg-blue-100 dark:bg-blue-900/30 border-blue-500',
                             purple: 'text-purple-600 bg-purple-100 dark:bg-purple-900/30 border-purple-500',
-                            teal: 'text-teal-600 bg-teal-100 dark:bg-teal-900/30 border-teal-500'
+                            teal: 'text-teal-600 bg-teal-100 dark:bg-teal-900/30 border-teal-500',
+                            red: 'text-red-600 bg-red-100 dark:bg-red-900/30 border-red-500'
                           };
-                          const barColorMap: { [key: string]: string } = { amber: 'bg-amber-500', blue: 'bg-blue-600', purple: 'bg-purple-600', teal: 'bg-teal-600' };
+                          const barColorMap: { [key: string]: string } = {
+                            amber: 'bg-amber-500',
+                            blue: 'bg-blue-600',
+                            purple: 'bg-purple-600',
+                            teal: 'bg-teal-600',
+                            red: 'bg-red-600'
+                          };
                           const hoverColorMap: { [key: string]: string } = {
                             amber: 'hover:border-amber-500 dark:hover:border-amber-500 hover:shadow-[0_0_15px_rgba(245,158,11,0.5)] dark:hover:shadow-[0_0_15px_rgba(245,158,11,0.4)]',
                             blue: 'hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] dark:hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]',
                             purple: 'hover:border-purple-500 dark:hover:border-purple-500 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] dark:hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]',
-                            teal: 'hover:border-teal-500 dark:hover:border-teal-500 hover:shadow-[0_0_15px_rgba(20,184,166,0.5)] dark:hover:shadow-[0_0_15px_rgba(20,184,166,0.4)]'
+                            teal: 'hover:border-teal-500 dark:hover:border-teal-500 hover:shadow-[0_0_15px_rgba(20,184,166,0.5)] dark:hover:shadow-[0_0_15px_rgba(20,184,166,0.4)]',
+                            red: 'hover:border-red-500 dark:hover:border-red-500 hover:shadow-[0_0_15px_rgba(239,68,68,0.5)] dark:hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]'
                           };
 
                           return (
