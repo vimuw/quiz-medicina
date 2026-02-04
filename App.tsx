@@ -428,7 +428,7 @@ export function App() {
 
       {/* QUIZ & RESULTS SCREEN */}
       {(view === 'quiz' || view === 'results') && currentQuizId && (
-        <div className="w-full max-w-3xl px-4 py-8 mt-12 flex-1 flex flex-col relative animate-fade-in">
+        <div className="w-full max-w-4xl px-4 py-8 mt-12 flex-1 flex flex-col relative animate-fade-in">
 
           {/* Results Summary */}
           {view === 'results' && (
