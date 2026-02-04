@@ -296,7 +296,7 @@ export const ALL_QUIZZES: QuizData = {
     { question: "I recettori per FGF (fibroblast growth factor):", options: ["sono canali ionici", "hanno attività tirosina cinasi", "hanno attività serina cinasi", "legano proteine G"], answer: "hanno attività tirosina cinasi" },
     { question: "Le proteine Gi/q:", options: ["attivano l'adenilato ciclasi", "inibiscono l'adenilato ciclasi", "stimolano la fosforilazione in tirosina", "stimolano la fosfolipasi C"], answer: "stimolano la fosfolipasi C" },
     { question: "Quali di questi non è un secondo messaggero:", options: ["testosterone", "AMPc", "Ca", "GMPc"], answer: "testosterone" },
-    { question: "Ras è una proteina ad attività enzimatica:", options: ["Serinacinasi", "Tirosinacinasi", "ATP idrolasi", "GTP idrolasi"], answer: "GTP idrolasi" } 
+    { question: "Ras è una proteina ad attività enzimatica:", options: ["Serinacinasi", "Tirosinacinasi", "ATP idrolasi", "GTP idrolasi"], answer: "GTP idrolasi" }
   ],
   biologia_molecolare: [
     { question: "Qual è la percentuale di DNA codificante?", options: ["20%", "10-20%", "1-5%", "0,5%", "50%"], answer: "1-5%" },
@@ -465,6 +465,7 @@ export const ALL_QUIZZES: QuizData = {
     { question: "Considerato un tipico gene protein coding del genoma umano, dove sono preferenzialmente localizzati i segnali per il legame dei fattori di trascrizione?", options: ["Nella regione del core promotore (ad es. -1000, +50bp attorno al TSS)", "Solo nella regione 5'-UTR", "Solo nella regione 3'-UTR", "Negli introni", "Nel citoplasma"], answer: "Nella regione del core promotore (ad es. -1000, +50bp attorno al TSS)" },
     { type: "text_input", question: "Indica se le modificazioni istoniche indicate favoriscono l'attivazione genica (A) o l'inattivazione genica (I). Formato richiesto: Lettera, Lettera, Lettera (es. A, I, A) per: Deacetilazione, Metilazione, Fosforilazione.", answer: "I, I, A", options: [] },
   ],
+  anatomia_1: [],
   neuroanatomia: [
     { question: "Quali delle seguenti strutture non posseggono collegamenti diretti con l'ipotalamo?", options: ["Corteccia Cerebellare", "Talamo", "Corteccia Cerebrale", "Ippocampo", "Amigdala"], answer: "Corteccia Cerebellare" },
     { question: "Quale delle seguenti affermazioni sul cervelletto è vera?", options: ["L'Emiballismo è un sintomo di danno cerebellare", "Le cellule di Renshaw sono interneuroni dello stato molecolare della corteccia cerebellare", "Le cellule del Purkinje ricevono afferenze dirette dai nuclei cerebellari profondi", "Gli emisferi cerebellari controllano e ricevono afferenze da muscoli ipsilaterali", "Il cervelletto manda proiezioni dirette alla corteccia motoria"], answer: "Gli emisferi cerebellari controllano e ricevono afferenze da muscoli ipsilaterali" },
@@ -684,7 +685,8 @@ export const CATEGORIES: CategoryInfo[] = [
     id: 'cat-anno1',
     title: 'Medicina: Primo Anno',
     quizzes: [
-      { id: 'neuroanatomia', title: 'Neuroanatomia', icon: '🧠', color: 'amber' }
+      { id: 'anatomia_1', title: 'Anatomia I', icon: '🦴', color: 'red' },
+      { id: 'neuroanatomia', title: 'Anatomia II', icon: '🧠', color: 'amber' }
     ]
   },
   {
