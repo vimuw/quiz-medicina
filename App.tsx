@@ -191,6 +191,25 @@ export function App() {
     window.scrollTo(0, 0);
   };
 
+  const handleResetQuiz = (quizId: string) => {
+    setModalConfig({
+      isOpen: true,
+      title: 'Resetta Progressi',
+      desc: 'Sei sicuro di voler cancellare tutti i progressi e le risposte salvate per questo quiz?',
+      confirmText: 'Sì, Resetta',
+      destructive: true,
+      action: () => {
+        StorageService.resetQuiz(quizId);
+        setUserAnswers(prev => {
+          const next = { ...prev };
+          Object.keys(next).forEach(k => { if (k.startsWith(quizId)) delete next[k]; });
+          return next;
+        });
+        setModalConfig(prev => ({ ...prev, isOpen: false }));
+      }
+    });
+  };
+
   const handleOptionSelect = (qIndex: number, option: string) => {
     if (isSubmitted) return;
     setCurrentAttempt(prev => ({ ...prev, [qIndex]: option }));
@@ -404,6 +423,17 @@ export function App() {
 
                           return (
                             <button key={quiz.id} onClick={() => handleStartQuiz(quiz.id)} className={`group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border-2 border-gray-200 dark:border-gray-700 transition-all duration-300 text-left hover:-translate-y-1 flex flex-col h-full ${hoverColorMap[quiz.color]}`}>
+                              {/* Reset Button */}
+                              <div className="absolute top-4 right-4 z-10">
+                                <button
+                                  onClick={(e) => { e.stopPropagation(); handleResetQuiz(quiz.id); }}
+                                  className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/30 transition-all opacity-0 group-hover:opacity-100"
+                                  title="Resetta progressi"
+                                >
+                                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                </button>
+                              </div>
+
                               <div className="flex items-center gap-4 mb-4">
                                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform ${colorMap[quiz.color].split(' ').slice(0, 3).join(' ')}`}>
                                   {quiz.icon}
