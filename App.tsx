@@ -55,6 +55,9 @@ export function App() {
     setUserAnswers(savedAnswers);
     setFlagged(savedFlagged);
 
+    // Force Title Update
+    document.title = "Quiz Medicina";
+
     // Load Session
     const session = StorageService.loadSession();
     if (session && session.quizId && ALL_QUIZZES[session.quizId]) {
