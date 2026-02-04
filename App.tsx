@@ -509,7 +509,7 @@ export function App() {
                     <div className="space-y-3 md:space-y-5">
                       {currentOptions.map((opt) => {
                         let btnClass = "w-full text-left p-3 md:p-5 rounded-xl md:rounded-2xl transition-all duration-200 flex items-center border-2 text-base md:text-lg ";
-                        let dotClass = "w-4 h-4 md:w-5 md:h-5 rounded-full bg-primary-600 transition-opacity ";
+                        let dotClass = "w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-primary-600 transition-opacity ";
 
                         if (view === 'quiz') {
                           const isSelected = attempt === opt;
