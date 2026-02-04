@@ -186,6 +186,12 @@ export function App() {
     setQuestionIndices(sessionIndices);
     setShuffledOptions(newShuffledOptions);
     setCurrentAttempt({});
+    // Clear flags for this specific quiz only when starting a NEW attempt
+    setFlagged(prev => {
+      const next = { ...prev };
+      Object.keys(next).forEach(k => { if (k.startsWith(`${quizId}-`)) delete next[k]; });
+      return next;
+    });
     setIsSubmitted(false);
     setView('quiz');
     window.scrollTo(0, 0);
