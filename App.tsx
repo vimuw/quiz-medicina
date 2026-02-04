@@ -480,16 +480,18 @@ export function App() {
                       disabled={isSubmitted}
                       title={isFlagged ? "Rimuovi segnalazione" : "Segnala domanda"}
                       className={`flex-shrink-0 p-2 md:p-3 rounded-full transition-all duration-200 transform active:scale-90 ${isFlagged
-                          ? 'text-yellow-500 bg-yellow-50 dark:bg-yellow-900/30 ring-2 ring-yellow-200 dark:ring-yellow-800'
-                          : isSubmitted
-                            ? 'text-gray-300 dark:text-gray-600 cursor-default'
-                            : 'text-gray-400 hover:text-yellow-600 hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-sm'
+                        ? 'text-yellow-500 bg-yellow-50 dark:bg-yellow-900/30 ring-2 ring-yellow-200 dark:ring-yellow-800'
+                        : isSubmitted
+                          ? 'text-gray-300 dark:text-gray-600 cursor-default'
+                          : 'text-gray-400 hover:text-yellow-600 hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-sm'
                         }`}
                     >
                       <svg className={`w-6 h-6 md:w-8 md:h-8 transition-transform duration-300 ${isFlagged ? 'fill-current scale-110' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={isFlagged ? 0 : 2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 21v-8a2 2 0 01-2-2h.5A2.5 2.5 0 004 8.5c.828 0 1.62-.2 2.25-.575C7.228 7.375 8.162 7 9 7c1.375 0 2.227.674 3.09 1.417.804.693 1.517 1.083 2.91 1.083 1.396 0 2.372-.65 3.085-1.428.618-.675 1.258-1.572 2.915-1.572v8c-1.33 0-2.316.59-3.085 1.428-.769.838-1.632 1.572-2.915 1.572-1.394 0-2.106-.39-2.91-1.083C11.227 15.674 10.375 15 9 15c-.838 0-1.772.375-2.75 1.075C5.62 16.575 4.828 17 4 17c-.552 0-1 .448-1 1v2" />
-                        {isFlagged && <path d="M5 21V4h14l-4 6 4 6H5v5h-2z" fill="currentColor" />}
-                        {!isFlagged && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 21V4h14l-4 6 4 6H5v5" />}
+                        {isFlagged ? (
+                          <path d="M5 21V4h14l-4 6 4 6H5v5h-2z" fill="currentColor" />
+                        ) : (
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 21V4h14l-4 6 4 6H5v5h-2z" />
+                        )}
                       </svg>
                     </button>
                   </div>
