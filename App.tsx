@@ -465,6 +465,7 @@ export function App() {
               const isFlagged = flagged[key];
               const attempt = currentAttempt[qIndex];
 
+              // Use shuffled options from state if available to maintain consistency between Quiz and Results view
               const currentOptions = shuffledOptions[qIndex] || qData.options || [];
 
               // Determine card style based on state
@@ -561,10 +562,10 @@ export function App() {
                             )}
                             <span className="text-gray-700 dark:text-gray-200">{opt}</span>
                             {view === 'results' && opt === qData.answer && (
-                              <svg className="w-5 h-5 md:w-7 md:h-7 text-green-600 dark:text-green-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                              <svg className="w-5 h-5 md:w-7 md:h-7 text-green-600 dark:text-green-400 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                             )}
                             {view === 'results' && opt === attempt && opt !== qData.answer && (
-                              <svg className="w-5 h-5 md:w-7 md:h-7 text-red-600 dark:text-red-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                              <svg className="w-5 h-5 md:w-7 md:h-7 text-red-600 dark:text-red-400 ml-auto flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                             )}
                           </button>
                         )
