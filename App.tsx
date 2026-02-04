@@ -483,7 +483,7 @@ export function App() {
                         ? 'text-yellow-500'
                         : isSubmitted
                           ? 'text-gray-300 dark:text-gray-600 cursor-default'
-                          : 'text-gray-400 hover:text-yellow-600 hover:bg-gray-100 dark:hover:bg-gray-700/50'
+                          : 'text-gray-400 hover:text-yellow-600'
                         }`}
                     >
                       <span className={`text-2xl md:text-3xl transition-transform duration-300 inline-block ${isFlagged ? 'text-yellow-500 scale-110' : ''}`}>
