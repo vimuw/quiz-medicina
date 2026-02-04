@@ -471,15 +471,15 @@ export function App() {
 
               return (
                 <div key={qIndex} id={`q-${qIndex}`} className={`bg-white dark:bg-gray-800 rounded-2xl md:rounded-3xl shadow-lg border ${borderColor} p-5 md:p-8 relative transition-all duration-300`}>
-                  <div className="flex justify-between items-start mb-6 md:mb-8 gap-4 md:gap-6">
-                    <h3 className="text-lg md:text-2xl font-medium text-gray-900 dark:text-gray-100 leading-relaxed">
+                  <div className="flex justify-between items-start mb-3 md:mb-4 gap-4 md:gap-6">
+                    <h3 className="text-lg md:text-2xl font-medium text-gray-900 dark:text-gray-100 leading-relaxed pt-1">
                       <span className="text-primary-600 dark:text-primary-400 font-bold mr-2">{displayIndex + 1}.</span> {qData.question}
                     </h3>
                     <button
                       onClick={() => toggleFlag(qIndex)}
                       disabled={isSubmitted}
                       title={isFlagged ? "Rimuovi segnalazione" : "Segnala domanda"}
-                      className={`flex-shrink-0 p-2 md:p-3 rounded-full transition-all duration-200 transform active:scale-90 ${isFlagged
+                      className={`flex-shrink-0 p-1 rounded-full transition-all duration-200 transform active:scale-90 ${isFlagged
                         ? 'text-yellow-500'
                         : isSubmitted
                           ? 'text-gray-300 dark:text-gray-600 cursor-default'
