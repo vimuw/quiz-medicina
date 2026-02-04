@@ -609,8 +609,8 @@ export function App() {
                     </div>
                   )}
                   {view === 'results' && !attempt && (
-                    <div className="text-red-500 font-bold text-lg md:text-xl mt-4 text-right flex items-center justify-end gap-2">
-                      <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <div className="text-red-500 font-bold text-sm md:text-base mt-2 md:mt-3 text-right flex items-center justify-end gap-1.5 md:gap-2">
+                      <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                       Non risposto
                     </div>
                   )}
